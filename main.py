@@ -8,3 +8,6 @@ def Car():
     def update(self, dt):
         self.x += self.vx*dt
         self.y += self.vy*dt
+    def position(self):
+        return (self.x, self.y)
+

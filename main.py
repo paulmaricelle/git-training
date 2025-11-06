@@ -17,7 +17,7 @@ class Car:
         self.max_accel = 600.0                   # px/s^2
         self.brake_accel = 800.0
         self.steer_strength = 180.0              # deg/s^2 at low speed
-        self.steer_falloff = 0.008               # how steering effectiveness drops with speed
+        self.steer_falloff = 0.003               # how steering effectiveness drops with speed
         self.base_lateral_friction = 0.9         # how quickly sideways velocity is damped
         self.slip_speed = 300.0                  # px/s threshold to start losing traction
         self.slip_steer_threshold = 60.0         # deg/s angular rate threshold for slip
@@ -39,9 +39,9 @@ class Car:
         # steering input
         steer_input = 0.0
         if keys[py.K_LEFT]:
-            steer_input += 1.0
+            steer_input -= 5.0
         if keys[py.K_RIGHT]:
-            steer_input -= 1.0
+            steer_input += 5.0
 
         # steering effectiveness falls off with speed
         speed = self.vel.length()

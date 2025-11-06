@@ -6,6 +6,7 @@ def Car():
         self.x, self.y = x, y
         self.angle = 0
 
+
     def update(self, dt):
         self.x += self.vx*dt
         self.y += self.vy*dt
@@ -41,3 +42,8 @@ def initialize():
 
         #Update the display
         py.display.flip()
+
+
+def position(self):
+    return (self.x, self.y)
+
